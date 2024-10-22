@@ -1,0 +1,355 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure all elements scale properly */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --paratext-color: #888788;
+    --heading-color: #00935f;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 20px;
+
+    .header-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 300px;
+        margin-left: 20px;
+    }
+}
+
+/* Banner */
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 50px;
+    text-align: center; /* Center the text and button */
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        max-width: 400px;
+        border-radius: 10px;
+        width: 100%; /* Ensure image scales with screen */
+    }
+
+    .btn-primary {
+        background-color: orange;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 20px auto;
+    }
+}
+
+/* Heading Styles */
+h1, h2, h3, h4 {
+    color: var(--heading-color); /* Apply heading color */
+    text-align: center;
+    position: relative;
+    /* margin-bottom: 20px; */
+
+    /* Add green underline to h1 */
+    &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 3px;
+        background-color: var(--heading-color);
+        margin: 20px auto;
+    }
+}
+
+/* Advantages Section */
+.advantages {
+    text-align: center;
+    margin: 50px 30px;
+
+    .advantage-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card {
+        position: relative; /* Set position relative for the pseudo-element */
+        padding: 20px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Ensure content is left-aligned */
+
+        p {
+            color: var(--paratext-color);
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none;
+            color: #759a23;
+            padding: 0%;
+        }
+    }
+
+    .card:nth-of-type(1),
+    .card:nth-of-type(3) {
+        position: relative; /* Set position relative for the pseudo-element */
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 20%; /* Adjust to control vertical positioning */
+            right: 0; /* Align to the right */
+            height: 60%; /* Shorten the border length */
+            border-right: 1px solid var(--paratext-color);
+        }
+    }
+
+    h3 {
+        text-align: left;
+        color: var(--heading-color); /* Apply heading color */
+        font-weight: 400;
+        &::after {
+            display: none; /* Disable the underline */
+        }
+    }
+}
+
+.info-box {
+    padding: 30px;
+    /* background-color: #f0f0f0;  */
+    border-radius: 8px; 
+
+    table {
+        width: 100%;
+        border-collapse: collapse; 
+
+        th {
+            background-color: var(--heading-color); 
+            color: white; 
+            text-align: center; 
+            padding: 12px; 
+            font-weight: 400;
+        }
+
+        td {
+            padding: 20px 60px; 
+            text-align: left; 
+            border: 1px solid #f6fff2; 
+            color:var(--paratext-color);
+            font-size: 14px;
+            line-height: 1.5rem;
+            background-color: #f6fff2;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9; 
+        }
+    }
+}
+
+
+.testimonials {
+    /* background-color: #f0f0f0; */
+    padding: 30px 50px;
+
+    .testimonial-cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        .testimonial {
+            flex: 1;
+            text-align: center; /* Center text within the testimonial block */
+            padding: 20px;
+            display: flex;  /* Use flexbox for alignment */
+            flex-direction: column; /* Align children in a column */
+            align-items: center;  /* Center children horizontally */
+
+            img {
+                max-width: 180px; /* Make testimonial icon bigger */
+                border-radius: 50%;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            p {
+                font-style: italic; /* Make the text cursive */
+                color:#666566;
+                font-weight: 200;
+                width: 50%;
+                text-align: center;
+                margin-top: 10px; 
+                font-size: 14px;
+            }
+
+            h4 {
+                color: var(--heading-color); /* Apply heading color */
+                font-weight: 400;
+                width: 50%;
+                text-align: center; 
+                margin-top: 5px; 
+                font-size: 14px;
+
+                &::after {
+                    display: none; /* Disable the underline */
+                }
+            }
+        }
+    }
+}
+
+
+/* Footer */
+.footer {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    text-align: left;
+
+    .footer-separator {
+        border: 1px solid var(--heading-color);
+        margin-bottom: 20px;
+    }
+
+    .footer-text {
+        font-size: 12px;
+        margin-top: 20px;
+        a{
+            color: inherit;
+        }
+    }
+
+    .footer-text,
+    .social-media {
+        text-align: left;
+    }
+    .footer-last{
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 20px;
+    }
+
+    .social-media a {
+        color: #000; /* Default color for icons */
+        text-decoration: none; /* Remove underline from links */
+        font-size: 20px; /* Adjust the size of icons */
+        transition: color 0.3s ease; /* Smooth transition for color change */
+        margin-left: 5px;
+    }
+
+    .social-media a:hover {
+        color: #00935f; /* Change color on hover (you can choose any color you prefer) */
+    }
+
+    .social-media a:nth-child(1) {
+        color: #3b5998; /* Facebook color */
+    }
+
+    .social-media a:nth-child(2) {
+        color: #1da1f2; /* Twitter color */
+    }
+
+    .social-media a:nth-child(3) {
+        color: #0077b5; /* LinkedIn color */
+    }
+}
+
+/* Responsive Design */
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 15px;
+    }
+
+    .social-media {
+        justify-content: flex-start;
+    }
+
+
+    .advantages .advantage-cards {
+        grid-template-columns: 1fr; 
+
+
+        /* .card:nth-of-type(2),
+        .card:nth-of-type(4){
+            position: relative; 
+            
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0; 
+                left: 30; 
+                width: 90%;
+                height: 1px; 
+                background-color: var(--paratext-color); 
+            }
+        } */
+    }
+
+    .btn-primary {
+        width: 100%; /* Full width button on smaller screens */
+    }
+
+    .testimonial-cards {
+        flex-direction: column;
+        align-items: center; /* Stack and center on smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Make elements scale better on very small screens */
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .testimonial img {
+        max-width: 80px; /* Smaller image on mobile */
+    }
+
+    .info-box p {
+        font-size: 1em;
+    }
+
+    .btn-primary {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
