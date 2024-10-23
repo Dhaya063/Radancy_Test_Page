@@ -191,6 +191,10 @@ h1, h2, h3, h4 {
         justify-content: space-between;
         gap: 20px;
 
+        .testimonial:nth-of-type(2) p {
+            width: 100%;
+        }        
+
         .testimonial {
             flex: 1;
             text-align: center; /* Center text within the testimonial block */
@@ -261,6 +265,8 @@ h1, h2, h3, h4 {
         font-size: 12px;
         font-weight: 500;
         margin-top: 20px;
+        text-decoration: none;
+        color: black;
     }
 
     .social-media a {
@@ -288,9 +294,18 @@ h1, h2, h3, h4 {
     }
 }
 
-/* Responsive Design */
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+    .header {
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .logo {
+        max-width: 200px; /* Reduce logo size on smaller screens */
+        margin-left: 10px; /* Adjust margin */
+    }
+
     .footer {
         padding: 15px;
     }
@@ -302,22 +317,29 @@ h1, h2, h3, h4 {
 
     .advantages .advantage-cards {
         grid-template-columns: 1fr; 
+    }
 
+    .card {
+        position: relative; 
+    }
 
-        /* .card:nth-of-type(2),
-        .card:nth-of-type(4){
-            position: relative; 
-            
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0; 
-                left: 30; 
-                width: 90%;
-                height: 1px; 
-                background-color: var(--paratext-color); 
-            }
-        } */
+    .advantages{
+        .card:nth-of-type(1)::after,
+        .card:nth-of-type(3)::after {
+            content: none; /* Remove the right border */
+        }
+    }
+
+    /* Add top border to card 2, 3, and 4 */
+    .card:nth-of-type(2),
+    .card:nth-of-type(3),
+    .card:nth-of-type(4) {
+        border-top: 1px solid var(--paratext-color); /* Add top border */
+    }
+
+    /* Optional: Adjust padding for better spacing if needed */
+    .card {
+        padding: 15px; /* Adjust padding for mobile */
     }
 
     .btn-primary {
@@ -339,6 +361,35 @@ h1, h2, h3, h4 {
     h3 {
         font-size: 18px;
     }
+
+    .header {
+        padding: 10px; /* Further adjust padding */
+
+        .header-content {
+            justify-content: center; /* Center the logo on 480px or less */
+        }
+
+        .logo {
+            max-width: 150px; /* Further reduce logo size */
+            margin-left: 5px; /* Adjust margin */
+        }
+    }
+
+    .banner {
+        overflow: hidden;
+        width: 100%;
+        height: auto; /* Adjust if necessary */
+
+        .banner-img {
+            width: 200%; /* Double the width to allow scrolling */
+            height: auto; 
+            position: relative; /* Needed for overflow */
+            left: 0; /* Start from the left */
+        }
+    }
+
+    
+    
 
     .testimonial img {
         max-width: 80px; /* Smaller image on mobile */
