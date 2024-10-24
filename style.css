@@ -77,6 +77,12 @@ h1,h2,h3,h4,h5,h6{
         display: inline-block;
         margin: 20px auto;
     }
+    
+   .btn-primary:hover {
+    background-color: #ff5d00; // Change this to your desired hover color
+    cursor: pointer;
+    transform: scale(0.95); // Scale down slightly on hover
+    }
 }
 
 /* Heading Styles */
